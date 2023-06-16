@@ -1,10 +1,10 @@
 provider "azurerm" {
   features {}
-  # subscription_id = "b2feb6c2-ca79-4f27-9e51-0b8605506858"
-  # client_id       = "52b0f75c-00b2-404c-acb3-fa28c67b69e1"
-  # client_secret   = "Rb48Q~NmvySTnw2qd9ZEXSAy8TYRJkvjkNhN5cwh"
-  # tenant_id       = "8165ad28-1985-447c-a63f-ff5bdc6483c4"
-  # use_msi         = true
+  # subscription_id = ""
+  # client_id       = ""
+  # client_secret   = ""
+  # tenant_id       = ""
+  # # use_msi         = true
 }
 
 resource "azurerm_resource_group" "example" {
@@ -15,3 +15,18 @@ resource "azurerm_resource_group" "example" {
 output "resource_group_id" {
   value = azurerm_resource_group.example.id
 }
+
+
+# resource "azurerm_virtual_network" "example" {
+#   name                = "example-vnet"
+#   address_space       = ["10.0.0.0/16"]
+#   location            = azurerm_resource_group.example.location
+#   resource_group_name = azurerm_resource_group.example.name
+# }
+
+# resource "azurerm_subnet" "example" {
+#   name                 = "example-subnet"
+#   resource_group_name  = azurerm_resource_group.example.name
+#   virtual_network_name = azurerm_virtual_network.example.name
+#   address_prefixes     = ["10.0.1.0/24"]
+# }
